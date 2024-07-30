@@ -1,7 +1,9 @@
 /* Variables */
 
 * {
-  --primaryColour: red;
+  --primaryColour: #C78354;
+  --secondaryColour: #333;
+  --tertiaryColour: #ddd;
 }
 
 /* Global */
@@ -47,33 +49,15 @@ section {
 
 /* non-Global */
 
-.flexRowCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flexColCenter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.flexBetween {
-  display: flex;
-  justify-content: space-between;
-}
-
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--secondaryColour);
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -81,17 +65,73 @@ section {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: var(--tertiaryColour);
   color: black;
 }
 
 .topnav a.active {
-  background-color: #04aa6d;
+  background-color: var(--primaryColour);
   color: white;
 }
 
 .topnav .icon {
   display: none;
+}
+
+.articleFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divFlex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gridOne {
+  grid-area: gridOne;
+}
+
+.gridTwo {
+  grid-area: gridTwo;
+}
+
+.gridThree {
+  grid-area: gridThree;
+}
+
+.gridFour {
+  grid-area: gridFour;
+}
+
+.articleGrid {
+  display: grid;
+  grid-gap: 10vw;
+  grid-template-areas: 
+  "... gridOne ..."
+  "gridTwo gridThree gridFour";
+  place-items: center;
+}
+
+img {
+  max-width: 50%;
+}
+
+.imageOne {
+  width: 500px;
+  height: 500px;
+  background-image: url(https://images.unsplash.com/photo-1720048170996-40507a45c720?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-attachment: fixed;
+}
+
+.imageTwo {
+  width: 500px;
+  height: 500px;
+  background-image: url(https://images.unsplash.com/photo-1719937206220-f7c76cc23d78?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 600px) {
@@ -101,6 +141,13 @@ section {
   .topnav a.icon {
     float: right;
     display: block;
+  }
+  .articleGrid {
+    grid-template-areas: 
+    "gridOne"
+    "gridTwo"
+    "gridThree"
+    "gridFour";
   }
 }
 
